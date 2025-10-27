@@ -1,0 +1,10 @@
+[17-Oct-2025 15:58:01 PRC] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /www/wwwroot/192.168.2.244/repair_save.php:371
+Stack trace:
+#0 /www/wwwroot/192.168.2.244/repair_save.php(371): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /www/wwwroot/192.168.2.244/repair_save.php on line 371
+[17-Oct-2025 15:58:04 PRC] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /www/wwwroot/192.168.2.244/repair_save.php:371
+Stack trace:
+#0 /www/wwwroot/192.168.2.244/repair_save.php(371): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /www/wwwroot/192.168.2.244/repair_save.php on line 371
