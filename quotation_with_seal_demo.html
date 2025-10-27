@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>报价单 - 带公章功能</title>
+    <link rel="stylesheet" href="seal-picker.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif;
+            background: #f7fafc;
+            padding: 20px;
+        }
+
+        .page-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .toolbar {
+            background: white;
+            padding: 16px 24px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 打印区域 */
+        .print-area {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            position: relative;
+            min-height: 800px;
+        }
+
+        /* 报价单样式 */
+        .quotation-header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #2d3748;
+            padding-bottom: 20px;
+        }
+
+        .quotation-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+
+        .quotation-no {
+            font-size: 14px;
+            color: #718096;
+        }
+
+        .quotation-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            font-size: 14px;
+        }
+
+        .info-label {
+            font-weight: 500;
+            color: #4a5568;
+            width: 100px;
+        }
+
+        .info-value {
+            color: #2d3748;
+        }
+
+        .quotation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        .quotation-table th,
+        .quotation-table td {
+            border: 1px solid #e2e8f0;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .quotation-table th {
+            background: #f7fafc;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .quotation-total {
+            text-align: right;
+            font-size: 18px;
+            font-weight: bold;
+            color: #c53030;
+            margin-top: 20px;
+        }
+
+        .quotation-footer {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .signature-block {
+            text-align: center;
+        }
+
+        .signature-line {
+            border-top: 1px solid #2d3748;
+            width: 200px;
+            margin-top: 50px;
+            padding-top: 10px;
+            font-size: 14px;
+            color: #718096;
+        }
+
+        /* 打印样式 */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .toolbar {
+                display: none !important;
+            }
+
+            .print-area {
+                box-shadow: none;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <!-- 工具栏 -->
+        <div class="toolbar">
+            <div class="seal-picker-container"></div>
+            <button class="btn btn-success" onclick="window.print()">🖨️ 打印</button>
+            <button class="btn btn-primary" onclick="exportToPDF()">📄 导出PDF</button>
+            <button class="btn" onclick="window.location.href='seal_management.php'">⚙️ 管理公章</button>
+        </div>
+
+        <!-- 打印区域 -->
+        <div class="print-area" id="printArea">
+            <!-- 报价单头部 -->
+            <div class="quotation-header">
+                <h1 class="quotation-title">产品报价单</h1>
+                <div class="quotation-no">报价单编号：QT-20251023-0001</div>
+            </div>
+
+            <!-- 客户信息 -->
+            <div class="quotation-info">
+                <div class="info-item">
+                    <span class="info-label">客户名称：</span>
+                    <span class="info-value">深圳市XX科技有限公司</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">报价日期：</span>
+                    <span class="info-value">2025年10月23日</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">联系人：</span>
+                    <span class="info-value">张先生</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">有效期：</span>
+                    <span class="info-value">30天</span>
+                </div>
+            </div>
+
+            <!-- 产品明细 -->
+            <table class="quotation-table">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>产品名称</th>
+                        <th>规格型号</th>
+                        <th>数量</th>
+                        <th>单位</th>
+                        <th>单价（元）</th>
+                        <th>金额（元）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>笔记本电脑</td>
+                        <td>联想ThinkPad X1 Carbon</td>
+                        <td>10</td>
+                        <td>台</td>
+                        <td>8,500.00</td>
+                        <td>85,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>显示器</td>
+                        <td>戴尔 27英寸 4K</td>
+                        <td>10</td>
+                        <td>台</td>
+                        <td>2,800.00</td>
+                        <td>28,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>机械键盘</td>
+                        <td>Cherry MX 红轴</td>
+                        <td>10</td>
+                        <td>个</td>
+                        <td>650.00</td>
+                        <td>6,500.00</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="quotation-total">
+                合计金额：¥119,500.00
+            </div>
+
+            <!-- 备注 -->
+            <div style="margin-top: 30px; font-size: 14px; color: #4a5568;">
+                <p><strong>备注：</strong></p>
+                <p>1. 以上报价含税，不含运费</p>
+                <p>2. 交货期：收到订单后7个工作日</p>
+                <p>3. 付款方式：货到付款或转账</p>
+            </div>
+
+            <!-- 签名区 -->
+            <div class="quotation-footer">
+                <div class="signature-block">
+                    <div>制单人：_____________</div>
+                    <div class="signature-line">签名</div>
+                </div>
+                <div class="signature-block" style="position: relative;">
+                    <div>深圳市凯尔耐特科技有限公司</div>
+                    <div class="signature-line">（公章）</div>
+                    <!-- 公章会添加到这里 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="seal-picker.js"></script>
+    <script>
+        // 导出PDF功能
+        function exportToPDF() {
+            // 方法1：使用浏览器打印功能
+            window.print();
+            
+            // 方法2：如果需要服务器端生成PDF，可以这样：
+            // const sealConfig = sealPicker.getSealPosition();
+            // if (sealConfig) {
+            //     // 保存公章配置
+            //     fetch('ajax_seals.php', {
+            //         method: 'POST',
+            //         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            //         body: new URLSearchParams({
+            //             action: 'save_document_seal',
+            //             document_type: 'quotation',
+            //             document_id: 1, // 报价单ID
+            //             seal_id: sealConfig.seal_id,
+            //             position_x: sealConfig.x,
+            //             position_y: sealConfig.y,
+            //             seal_size: sealConfig.size
+            //         })
+            //     }).then(() => {
+            //         // 跳转到PDF生成页面
+            //         window.location.href = 'generate_quotation_pdf.php?id=1';
+            //     });
+            // }
+        }
+    </script>
+</body>
+</html>
