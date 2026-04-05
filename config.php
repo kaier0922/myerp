@@ -3,9 +3,9 @@
 
 // 数据库配置
 define('DB_HOST', 'localhost');
-define('DB_USER', '***');
+define('DB_USER', '数据库用户');
 define('DB_PASS', '你自己的密码');
-define('DB_NAME', '***');
+define('DB_NAME', '数据库名称');
 define('DB_CHARSET', 'utf8mb4');
 
 // 获取数据库连接
