@@ -27,7 +27,7 @@
 
 | 报价单 | 送货单 | 销售合同 | 收据 |
 |--------|--------|------|
-| ![报价单](docs/images/quote.png) | ![送货单](docs/images/delivery.png) | ![合同](docs/images/contract.png) |![收据](docs/images/receipt.png) |
+| ![报价单](docs/images/quote.png) | ![送货单](docs/images/delivery.png) | ![合同](docs/images/contracts.png) |![收据](docs/images/receipt.png) |
 
 ---
 
