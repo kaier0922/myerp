@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>电脑装机工程智能报价系统 - v1.5.0 说明</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+        background: linear-gradient(135deg, #1f6dad 0%, #135286 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+    .card {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        width: 100%;
+        max-width: 560px;
+        padding: 48px 40px;
+    }
+    .logo { text-align: center; margin-bottom: 28px; }
+    .logo-icon {
+        width: 64px; height: 64px;
+        background: linear-gradient(135deg, #1f6dad 0%, #135286 100%);
+        border-radius: 16px;
+        display: inline-flex; align-items: center; justify-content: center;
+        font-size: 32px; color: white; margin-bottom: 16px;
+    }
+    h1 { font-size: 22px; color: #1a202c; margin-bottom: 8px; }
+    .subtitle { color: #718096; font-size: 14px; }
+    .version-badge {
+        display: inline-block;
+        margin-top: 16px;
+        padding: 6px 16px;
+        background: #eff6ff;
+        color: #1f6dad;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .info-list { margin-top: 32px; border-top: 1px solid #e2e8f0; padding-top: 24px; }
+    .info-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        font-size: 14px;
+        border-bottom: 1px dashed #e2e8f0;
+    }
+    .info-row:last-child { border-bottom: none; }
+    .info-label { color: #718096; }
+    .info-value { color: #1a202c; font-weight: 500; }
+    .footer-text {
+        text-align: center;
+        color: #a0aec0;
+        font-size: 12px;
+        margin-top: 32px;
+    }
+</style>
+</head>
+<body>
+    <div class="card">
+        <div class="logo">
+            <div class="logo-icon">📊</div>
+            <h1>电脑装机工程智能报价系统</h1>
+            <p class="subtitle">版本发布说明</p>
+            <div class="version-badge">v1.5.0</div>
+        </div>
+
+        <div class="info-list">
+            <div class="info-row">
+                <span class="info-label">系统名称</span>
+                <span class="info-value">电脑装机工程智能报价系统</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">版本号</span>
+                <span class="info-value">v1.5.0</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">部署路径</span>
+                <span class="info-value">/1.5/</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">运行环境</span>
+                <span class="info-value">PHP 7.4 + MySQL</span>
+            </div>
+        </div>
+
+        <div class="footer-text">
+            <p>© 2026 装机工程智能报价系统. 保留所有权利.</p>
+        </div>
+    </div>
+</body>
+</html>
