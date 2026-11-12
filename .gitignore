@@ -2,9 +2,3 @@ config_local.php
 /config.php
 /sms_config.php
 
-# Runtime uploads are created by the application; keep only access-control files.
-/uploads/*
-!/uploads/.htaccess
-!/uploads/**/
-/uploads/**/*
-!/uploads/**/.htaccess
