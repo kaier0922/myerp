@@ -6,6 +6,16 @@
 
 目标是让常见报价快速完成，并支持管理 3 万级产品目录及报价后续业务。
 
+## Windows 64 位单机版：下载即用
+
+没有服务器也可以使用。在 Windows 64 位电脑上下载并解压官方集成包，按包内说明启动即可；无需自行安装 PHP、MySQL 或部署服务器，基础版功能不设限制。
+
+- [下载 Windows 集成包 v1.5.0](https://github.com/kaier0922/myerp/releases/download/v1.5.0/ERP_v1.5_20261010.zip)
+- [查看文件校验信息](https://github.com/kaier0922/myerp/releases/download/v1.5.0/ERP_v1.5_20261010.sha256_md5.txt)
+- [查看 v1.5.0 发布说明](https://github.com/kaier0922/myerp/releases/tag/v1.5.0)
+
+> 当前 GitHub 源码版本为 v1.5.1；已发布的 Windows 集成包为 v1.5.0。没有服务器的个人或小型团队可直接使用 Windows 集成包；需要多人远程访问时，再选择服务器或 NAS 部署。
+
 ---
 
 ## 在线演示
@@ -104,7 +114,7 @@
 
 ---
 
-## 部署与配置
+## 源码服务器部署（可选）
 
 ### 环境要求
 
