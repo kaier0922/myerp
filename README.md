@@ -18,22 +18,32 @@
 
 ## 📸 系统界面
 
-| 报价单 | 送货单 | 销售合同 | 收据 |
-| --- | --- | --- | --- |
-| <img src="docs/images/quote.png" alt="组装机报价单" width="220"> | <img src="docs/images/delivery.png" alt="送货单" width="220"> | <img src="docs/images/contracts.png" alt="销售合同" width="220"> | <img src="docs/images/receipt.png" alt="收据" width="220"> |
+按单证类型和打印风格展示；每张截图单独一行。
 
-| 维修工单 |
-| --- |
-| <img src="docs/images/repair.png" alt="维修工单" width="440"> |
+### 报价单风格
 
-<details>
-<summary>查看其他报价单样式</summary>
+<p><strong>商务经典</strong><br><img src="docs/images/quote2.png" alt="报价单 - 商务经典" width="720"></p>
 
-| 样式一 | 样式二 | 样式三 | 样式四 |
-| --- | --- | --- | --- |
-| <img src="docs/images/quote1.png" alt="报价单样式一" width="220"> | <img src="docs/images/quote2.png" alt="报价单样式二" width="220"> | <img src="docs/images/quote3.png" alt="报价单样式三" width="220"> | <img src="docs/images/quote4.png" alt="报价单样式四" width="220"> |
+<p><strong>草原风格</strong><br><img src="docs/images/quote.png" alt="报价单 - 草原风格" width="720"></p>
 
-</details>
+<p><strong>少女风格</strong><br><img src="docs/images/quote1.png" alt="报价单 - 少女风格" width="720"></p>
+
+<p><strong>中式红印</strong><br><img src="docs/images/quote3.png" alt="报价单 - 中式红印" width="720"></p>
+
+<p><strong>宠萌风格</strong><br><img src="docs/images/quote4.png" alt="报价单 - 宠萌风格" width="720"></p>
+
+报价单还支持极简墨白、奢华金典、卡通、太空和机器等风格。
+
+### 其他业务单据
+
+<p><strong>送货单</strong><br><img src="docs/images/delivery.png" alt="送货单示例" width="720"></p>
+
+<p><strong>销售合同</strong><br><img src="docs/images/contracts.png" alt="销售合同示例" width="720"></p>
+
+<p><strong>收据</strong><br><img src="docs/images/receipt.png" alt="收据示例" width="720"></p>
+
+<p><strong>维修工单</strong><br><img src="docs/images/repair.png" alt="维修工单示例" width="720"></p>
+
 
 ## ✨ 功能模块
 
