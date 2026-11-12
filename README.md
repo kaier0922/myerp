@@ -8,9 +8,12 @@
 
 ## Windows 64 位单机版：下载即用
 
-没有服务器也可以使用。在 Windows 64 位电脑上下载并解压官方集成包，按包内说明启动即可；无需自行安装 PHP、MySQL 或部署服务器，基础版功能不设限制。
+> **每个电脑店必备的管理系统：管货物、管客户、管账、管序列号，管天管地管天气。**
 
-- [下载 Windows 集成包 v1.5.0](https://github.com/kaier0922/myerp/releases/download/v1.5.0/ERP_v1.5_20261010.zip)
+没有服务器也可以使用。在 Windows 64 位电脑上下载并解压官方本地集成版，按包内说明启动即可；无需自行安装 PHP、MySQL 或部署服务器，基础版功能不设限制。
+
+- [前往 GitHub Releases 下载 v1.5.0 Windows 本地集成版](https://github.com/kaier0922/myerp/releases)
+- [直接下载 Windows 集成包 v1.5.0](https://github.com/kaier0922/myerp/releases/download/v1.5.0/ERP_v1.5_20261010.zip)
 - [查看文件校验信息](https://github.com/kaier0922/myerp/releases/download/v1.5.0/ERP_v1.5_20261010.sha256_md5.txt)
 - [查看 v1.5.0 发布说明](https://github.com/kaier0922/myerp/releases/tag/v1.5.0)
 
