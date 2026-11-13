@@ -45,6 +45,7 @@
 - **演示地址：** [www.980g.com](https://www.980g.com)（早期 v1.1 演示环境，功能与当前 v1.5.1 代码版本存在差异）
 - **演示账号：** 手机号 `13800138000`，密码 `13800138000`
 - **演示视频：** [v1.1 演示视频](https://github.com/kaier0922/myerp/releases/download/v1.1.0/demo.mp4)
+- **工程报价与核算视频：** [强电工程报价单](https://github.com/kaier0922/myerp/releases/download/v1.5.0/quote-strong-current.mp4) · [弱电工程 30 秒报价单](https://github.com/kaier0922/myerp/releases/download/v1.5.0/quote-weak-current.mp4) · [项目成本核算](https://github.com/kaier0922/myerp/releases/download/v1.5.0/project-cost-accounting.mp4)
 
 > 演示环境仅供体验，数据为测试数据并可能定期清理。请勿录入真实客户、产品或财务数据。
 
